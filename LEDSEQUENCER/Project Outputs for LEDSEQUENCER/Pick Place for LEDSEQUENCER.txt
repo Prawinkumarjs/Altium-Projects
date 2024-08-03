@@ -1,0 +1,41 @@
+Altium Designer Pick and Place Locations
+C:\Users\Public\Documents\Altium\First Project BY Tamil\LEDSEQUENCE\LEDSEQUENCER\Project Outputs for LEDSEQUENCER\Pick Place for LEDSEQUENCER.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       03-08-24
+Time:       16:48
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+Designator Comment        Layer    Footprint              Center-X(mil) Center-Y(mil) Rotation Description                                                                                       
+U2         NE555DR        TopLayer FP-D0008A-IPC_A        1732.284      177.165       0        "IC OSC SGL TIMER 100KHZ 8-SOIC"                                                                  
+U1         CD4017BM       TopLayer D0016A_N               964.567       196.850       270      "CMOS Decade Counter with 10 Decoded Outputs, D0016A, TUBE"                                       
+R13        50k            TopLayer FP-3386P-MFG           255.905       286.811       180      "TRIMMER 100K OHM 0.5W PC PIN TOP"                                                                
+R12        10k            TopLayer RESC2013X60X35ML10T20  1377.953      255.905       0        "Chip Resistor, 1 KOhm, +/- 1%, 125 mW, -55 to 155 degC, 0805 (2012 Metric), RoHS, Tape and Reel" 
+R11        2.2k           TopLayer RESC2013X60X35ML10T20  1377.953      118.110       180      "Chip Resistor, 1 KOhm, +/- 1%, 125 mW, -55 to 155 degC, 0805 (2012 Metric), RoHS, Tape and Reel" 
+R10        RC0805FR-071KL TopLayer RESC2013X60X35ML10T20  98.425        551.181       90       "Chip Resistor, 1 KOhm, +/- 1%, 125 mW, -55 to 155 degC, 0805 (2012 Metric), RoHS, Tape and Reel" 
+R9         RC0805FR-071KL TopLayer RESC2013X60X35ML10T20  334.646       551.181       90       "Chip Resistor, 1 KOhm, +/- 1%, 125 mW, -55 to 155 degC, 0805 (2012 Metric), RoHS, Tape and Reel" 
+R8         RC0805FR-071KL TopLayer RESC2013X60X35ML10T20  570.866       551.181       90       "Chip Resistor, 1 KOhm, +/- 1%, 125 mW, -55 to 155 degC, 0805 (2012 Metric), RoHS, Tape and Reel" 
+R7         RC0805FR-071KL TopLayer RESC2013X60X35ML10T20  807.087       551.181       90       "Chip Resistor, 1 KOhm, +/- 1%, 125 mW, -55 to 155 degC, 0805 (2012 Metric), RoHS, Tape and Reel" 
+R6         RC0805FR-071KL TopLayer RESC2013X60X35ML10T20  1043.307      551.181       90       "Chip Resistor, 1 KOhm, +/- 1%, 125 mW, -55 to 155 degC, 0805 (2012 Metric), RoHS, Tape and Reel" 
+R5         RC0805FR-071KL TopLayer RESC2013X60X35ML10T20  1279.528      551.181       90       "Chip Resistor, 1 KOhm, +/- 1%, 125 mW, -55 to 155 degC, 0805 (2012 Metric), RoHS, Tape and Reel" 
+R4         RC0805FR-071KL TopLayer RESC2013X60X35ML10T20  1515.748      551.181       90       "Chip Resistor, 1 KOhm, +/- 1%, 125 mW, -55 to 155 degC, 0805 (2012 Metric), RoHS, Tape and Reel" 
+R3         RC0805FR-071KL TopLayer RESC2013X60X35ML10T20  1751.968      551.181       90       "Chip Resistor, 1 KOhm, +/- 1%, 125 mW, -55 to 155 degC, 0805 (2012 Metric), RoHS, Tape and Reel" 
+R2         RC0805FR-071KL TopLayer RESC2013X60X35ML10T20  2007.874      551.181       90       "Chip Resistor, 1 KOhm, +/- 1%, 125 mW, -55 to 155 degC, 0805 (2012 Metric), RoHS, Tape and Reel" 
+R1         1k             TopLayer RESC2013X60X35ML10T20  2263.780      551.181       90       "Chip Resistor, 1 KOhm, +/- 1%, 125 mW, -55 to 155 degC, 0805 (2012 Metric), RoHS, Tape and Reel" 
+J1         M20-9990246    TopLayer FP-M20-9990246-MFG     2244.095      177.165       90       "CONN HEADER VERT 2POS 2.54MM"                                                                    
+D10        HLMP-1301      TopLayer FP-HLMP-1301-MFG       98.425        748.032       270      "LED RED DIFFUSED T-1 T/H"                                                                        
+D9         HLMP-1301      TopLayer FP-HLMP-1301-MFG       334.646       748.032       270      "LED RED DIFFUSED T-1 T/H"                                                                        
+D8         HLMP-1301      TopLayer FP-HLMP-1301-MFG       570.866       748.032       270      "LED RED DIFFUSED T-1 T/H"                                                                        
+D7         HLMP-1301      TopLayer FP-HLMP-1301-MFG       807.087       748.032       270      "LED RED DIFFUSED T-1 T/H"                                                                        
+D6         HLMP-1301      TopLayer FP-HLMP-1301-MFG       1043.307      748.032       270      "LED RED DIFFUSED T-1 T/H"                                                                        
+D5         HLMP-1301      TopLayer FP-HLMP-1301-MFG       1279.527      748.032       270      "LED RED DIFFUSED T-1 T/H"                                                                        
+D4         HLMP-1301      TopLayer FP-HLMP-1301-MFG       1515.748      748.032       270      "LED RED DIFFUSED T-1 T/H"                                                                        
+D3         HLMP-1301      TopLayer FP-HLMP-1301-MFG       1751.968      748.032       270      "LED RED DIFFUSED T-1 T/H"                                                                        
+D2         HLMP-1301      TopLayer FP-HLMP-1301-MFG       2007.874      748.032       270      "LED RED DIFFUSED T-1 T/H"                                                                        
+D1         HLMP-1301      TopLayer FP-HLMP-1301-MFG       2263.780      748.032       270      "LED RED DIFFUSED T-1 T/H"                                                                        
+C2         1uf            TopLayer CAPC2013X135X45LL10T25 2047.244      236.220       0        ""                                                                                                
+C1         1uf            TopLayer CAPC2013X135X45LL10T25 2047.244      118.110       0        ""                                                                                                
