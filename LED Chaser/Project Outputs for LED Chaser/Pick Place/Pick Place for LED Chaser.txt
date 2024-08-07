@@ -1,0 +1,32 @@
+Altium Designer Pick and Place Locations
+C:\Users\Public\Documents\Altium\LED Chaser\Project Outputs for LED Chaser\Pick Place\Pick Place for LED Chaser.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       07-08-24
+Time:       16:36
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+Designator Comment            Layer    Footprint          Center-X(mil) Center-Y(mil) Rotation Description                                                                                                          
+U2         NE555P             TopLayer P0008A             841.575       1417.087      0        "Precision Timer, 4.5 to 16 V, 0 to 70 degC, 8-Pin DIP, Pb-Free, Tube"                                               
+U1         CD74HC4017E        TopLayer N0016A             1409.842      1503.543      0        "High Speed CMOS Logic Decade Counter/Divider with 10 Decoded Outputs, N0016A, TUBE"                                 
+R4         OD103JE            TopLayer OMTE-RES7X2.5-2    1811.024      1456.693      90       "Little Demon(R) Carbon Composition Molded OD Series, 250 V, 10 KOhm, +/-5%, -70 to 130 degC, 2-Pin THD, RoHS, Bulk" 
+R3         OD103JE            TopLayer OMTE-RES7X2.5-2    1417.323      748.032       180      "Little Demon(R) Carbon Composition Molded OD Series, 250 V, 10 KOhm, +/-5%, -70 to 130 degC, 2-Pin THD, RoHS, Bulk" 
+R2         3313J-1-503E       TopLayer BOUR-3313J-1_V     669.291       944.882       90       "3 mm Trimpot(R) Trimming Potentiometer, 50 KOhm, +/- 20%, 0.125 W, -55 to 125 degC, 3-Pin SMD, RoHS, Tape and Reel" 
+R1         MFR-25FBF52-1M     TopLayer RESA60-630X240     1417.323      984.252       0        "Axial Resistor, 1 MOhm, +/- 1%, 250 mW, -55 to 155 degC, 2-Pin THD, RoHS, Bulk"                                     
+J1         M20-9990246        TopLayer FP-M20-9990246-MFG 944.882       1771.653      180      "CONN HEADER VERT 2POS 2.54MM"                                                                                       
+D10        151051BS04000      TopLayer WL-TMRC_D5.9H8.7   1939.764      2283.465      0        ""                                                                                                                   
+D9         151051BS04000      TopLayer WL-TMRC_D5.9H8.7   2412.205      1811.024      0        ""                                                                                                                   
+D8         151051BS04000      TopLayer WL-TMRC_D5.9H8.7   2362.211      1181.109      0        ""                                                                                                                   
+D7         151051BS04000      TopLayer WL-TMRC_D5.9H8.7   2057.874      433.071       0        ""                                                                                                                   
+D6         151051BS04000      TopLayer WL-TMRC_D5.9H8.7   1496.069      196.857       0        ""                                                                                                                   
+D5         151051BS04000      TopLayer WL-TMRC_D5.9H8.7   719.291       354.331       0        ""                                                                                                                   
+" "        151051BS04000      TopLayer WL-TMRC_D5.9H8.7   146.850       1102.362      180      ""                                                                                                                   
+D3         151051BS04000      TopLayer WL-TMRC_D5.9H8.7   157.474       1496.057      180      ""                                                                                                                   
+D2         151051BS04000      TopLayer WL-TMRC_D5.9H8.7   561.811       2204.724      0        ""                                                                                                                   
+D1         151051BS04000      TopLayer WL-TMRC_D5.9H8.7   1270.472      2322.835      0        ""                                                                                                                   
+C2         RCER71H103K0K1H03B TopLayer FP-RCE0K1-MFG      866.142       708.661       180      "Cap Ceramic 10nF 50V X7R ±10% Radial 5mm +125°C Automotive Bulk"                                                    
+C1         RCER71E226MWM1H03A TopLayer FP-RCEWM1-MFG      944.882       964.567       90       "CAP CER 22UF 25V X7R RADIAL"                                                                                        

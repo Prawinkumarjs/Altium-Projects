@@ -1,0 +1,24 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: LED Chaser.PcbDoc   07-08-2024  16:34:08
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : LED Chaser.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.3mm (12mil)                                             Round             4         PTH        42.48mm (1.67inch)
+T2      0.7mm (28mil)                                             Round             4         PTH        14.03mm (0.55inch)
+T3      0.85mm (33mil)                                            Round             6         PTH        44.88mm (1.77inch)
+T4      0.9mm (35mil)                                             Round             24        PTH        94.93mm (3.74inch)
+T5      1mm (39mil)                                               Round             20        PTH        192.57mm (7.58inch)
+T6      1.02mm (40mil)                                            Round             2         PTH        2.54mm (0.10inch)
+T7      2mm (79mil)                                               Round             4         PTH        184.01mm (7.24inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              64
+
+Two holes at same point : 1
+-----------------------
+945,866
+
+Total Processing Time (hh:mm:ss) : 00:00:00
