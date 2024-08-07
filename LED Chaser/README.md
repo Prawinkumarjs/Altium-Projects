@@ -7,7 +7,7 @@ I completed the project with the help of Audas' [YouTube tutorial](https://www.y
 ## Project Details
 
 ### Schematic
-![Schematic](https://github.com/Prawinkumarjs/Altium-Projects/blob/main/LED%20Chaser/Project%20Outputs%20for%20LED%20Chaser/Schematic%20Prints/LED%20Chaser.PDF)
+![Schematic](https://github.com/Prawinkumarjs/Altium-Projects/blob/main/LED%20Chaser/Project%20Outputs%20for%20LED%20Chaser/Schematic%20Prints/Schematic.png)
 
 ### PCB Layout
 ![PCB Layout](https://github.com/Prawinkumarjs/Altium-Projects/blob/main/LED%20Chaser/Project%20Outputs%20for%20LED%20Chaser/PCB%20Prints/LED%20Chaser%20PCB%20Layout.png)
