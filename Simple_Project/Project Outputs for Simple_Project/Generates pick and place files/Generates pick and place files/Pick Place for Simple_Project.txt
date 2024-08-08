@@ -1,0 +1,17 @@
+Altium Designer Pick and Place Locations
+C:\Users\Public\Documents\Altium\Simple_Project\Project Outputs for Simple_Project\Generates pick and place files\Generates pick and place files\Pick Place for Simple_Project.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       08-08-24
+Time:       15:10
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+Designator Comment            Layer    Footprint                     Center-X(mil) Center-Y(mil) Rotation Description                                                                                   
+R2         MRS25000C1001FCT00 TopLayer FP-MRS25-MFG                  3455.000      2315.000      90       "RES 1K OHM 0.6W 1% AXIAL"                                                                    
+R1         MRS25000C1001FCT00 TopLayer FP-MRS25-MFG                  3630.000      2320.000      270      "RES 1K OHM 0.6W 1% AXIAL"                                                                    
+D1         FDLL4148           TopLayer FAIR-LL-34_V                  3015.000      2325.000      90       "High Conductance Fast Diode, 500 mW, 100 V, -65 to 175 degC, 2-Pin SMD, RoHS, Tape and Reel" 
+C1         GRM188R60J106ME47D TopLayer FP-GRM188-0_1-e0_2_0_55-IPC_A 3220.000      2335.000      270      "Chip Multilayer Ceramic Capacitors for General Purpose, 0603, 10uF, X5R, 15%, 20%, 6.3V"     

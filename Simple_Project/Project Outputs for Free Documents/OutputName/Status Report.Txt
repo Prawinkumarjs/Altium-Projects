@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 15:09:36 On 08-08-2024
+
+Output: PCB 3D Print
+Type  : PCB 3D Print
+From  : Variant [[No Variations]] of PCB Document [Simple_Project.PcbDoc]
+   Generated File[Simple_Project.png]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 15:09:36 On 08-08-2024
