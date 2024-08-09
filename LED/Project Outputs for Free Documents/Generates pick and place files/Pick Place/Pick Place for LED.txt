@@ -1,0 +1,16 @@
+Altium Designer Pick and Place Locations
+C:\Users\Public\Documents\Altium\LED\Project Outputs for Free Documents\Generates pick and place files\Pick Place\Pick Place for LED.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       09-08-24
+Time:       16:23
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+Designator Comment      Layer    Footprint Center-X(mil) Center-Y(mil) Rotation Description                                                                                 
+R1         360R         TopLayer R0805     216.535       529.528       90       "SMD Chip Resistor, 360 Ohm, ± 1%, 125 mW, 0805 [2012 Metric], Thick Film, General Purpose" 
+J1         "1x2 Header" TopLayer HDR1x2    590.551       404.331       0        "KK 254 Wire-to-Board Header, Vertical, with Friction Lock, 2 Circuits, Gold (Au) Plating"  
+D1         GREEN        TopLayer LED0603G  216.535       236.220       90       "Standard LEDs - SMD LED GR HI-BRT USS"                                                     
