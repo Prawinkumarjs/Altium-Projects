@@ -1,0 +1,15 @@
+Add Pin To Net: Unknown Pin: Pin battery-1
+Add Pin To Net: Unknown Pin: Pin battery-2
+Add Pin To Net: Unknown Pin: Pin Cap-1
+Add Pin To Net: Unknown Pin: Pin Cap-2
+Add Pin To Net: Unknown Pin: Pin Diode-1
+Add Pin To Net: Unknown Pin: Pin Diode-2
+Add Pin To Net: Unknown Pin: Pin R1-1
+Add Pin To Net: Unknown Pin: Pin R1-2
+Add Pin To Net: Unknown Pin: Pin R2-1
+Add Pin To Net: Unknown Pin: Pin R2-2
+Add Class Member: Failed to add class member : Component battery Constant Voltage Source
+Add Class Member: Failed to add class member : Component Cap Capacitor
+Add Class Member: Failed to add class member : Component Diode
+Add Class Member: Failed to add class member : Component R1 1K
+Add Class Member: Failed to add class member : Component R2 1K

@@ -1,0 +1,6 @@
+Added Pin To Net: NetName=GND Pin=D1-1
+Added Pin To Net: NetName=Diode 1 Pin=D1-2
+Added Pin To Net: NetName=+3v3 Pin=J1-1
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Pin To Net: NetName=Diode 1 Pin=R1-1
+Added Pin To Net: NetName=+3v3 Pin=R1-2

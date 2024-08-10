@@ -1,0 +1,17 @@
+Ultrasonic Sensor
+
+How It Works – Ultrasonic Sensor
+
+
+
+  It emits ultrasound at 40 000 Hz which travels through the air and if there is an object or obstacle on its path It will bounce back to the module. Considering the travel time and the speed of the sound you can calculate the distance 
+
+
+
+Why 58 / 57.8 ?
+
+the speed of sound is 340 meters/second 
+Its is 29 centimeter/microseconds value is the duration of the round trip 
+we need half of it 
+
+value/29/2 = value / 58

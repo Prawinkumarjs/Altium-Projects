@@ -1,0 +1,9 @@
+PIR - Passive Infrared Sensor 
+(PIR Sensor)
+
+Electronic sensor that measures infrared (IR) light radiation from object in its field of view
+
+Its has three pin (right to left)
+> signal(1)
+> power(2)
+> ground(3)
