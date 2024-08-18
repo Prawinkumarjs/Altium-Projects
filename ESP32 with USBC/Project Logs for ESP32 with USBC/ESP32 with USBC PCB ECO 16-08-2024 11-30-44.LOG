@@ -1,0 +1,16 @@
+Added Pin To Net: NetName=GND Pin=J3-A1B12
+Added Pin To Net: NetName=+5V_VBUS1 Pin=J3-A4B9
+Added Pin To Net: NetName=GND Pin=J3-B1A12
+Added Pin To Net: NetName=+5V_VBUS1 Pin=J3-B4A9
+Added Pin To Net: NetName=GND Pin=J3-S1
+Added Pin To Net: NetName=GND Pin=J3-S2
+Added Pin To Net: NetName=GND Pin=J3-S3
+Added Pin To Net: NetName=GND Pin=J3-S4
+Added Pin To Net: NetName=GND Pin=J4-A1B12
+Added Pin To Net: NetName=+5V_VBUS2 Pin=J4-A4B9
+Added Pin To Net: NetName=GND Pin=J4-B1A12
+Added Pin To Net: NetName=+5V_VBUS2 Pin=J4-B4A9
+Added Pin To Net: NetName=GND Pin=J4-S1
+Added Pin To Net: NetName=GND Pin=J4-S2
+Added Pin To Net: NetName=GND Pin=J4-S3
+Added Pin To Net: NetName=GND Pin=J4-S4
