@@ -1,0 +1,40 @@
+Change Component Footprint: Designator=D1 Old Footprint=WL-TIRW_D3.9H5.3 New Footprint=WL-TIRW_D3.9H5.3
+Change Component Footprint: Designator=D2 Old Footprint=WL-TIRW_D3.9H5.3 New Footprint=WL-TIRW_D3.9H5.3
+Change Component Footprint: Designator=D3 Old Footprint=WL-TIRW_D3.9H5.3 New Footprint=WL-TIRW_D3.9H5.3
+Change Component Footprint: Designator=D4 Old Footprint=WL-TIRW_D3.9H5.3 New Footprint=WL-TIRW_D3.9H5.3
+Change Component Footprint: Designator=D5 Old Footprint=WL-TIRW_D3.9H5.3 New Footprint=WL-TIRW_D3.9H5.3
+Change Component Footprint: Designator=D6 Old Footprint=WL-TIRW_D3.9H5.3 New Footprint=WL-TIRW_D3.9H5.3
+Change Component Footprint: Designator=D7 Old Footprint=WL-TIRW_D3.9H5.3 New Footprint=WL-TIRW_D3.9H5.3
+Change Component Footprint: Designator=D8 Old Footprint=WL-TIRW_D3.9H5.3 New Footprint=WL-TIRW_D3.9H5.3
+Change Component Footprint: Designator=D9 Old Footprint=WL-TIRW_D3.9H5.3 New Footprint=WL-TIRW_D3.9H5.3
+Change Component Footprint: Designator=D10 Old Footprint=WL-TIRW_D3.9H5.3 New Footprint=WL-TIRW_D3.9H5.3
+Add Pin To Net: Unknown Pin: Pin R1-1
+Add Pin To Net: Unknown Pin: Pin R1-2
+Add Pin To Net: Unknown Pin: Pin R2-1
+Add Pin To Net: Unknown Pin: Pin R2-2
+Add Pin To Net: Unknown Pin: Pin R3-1
+Add Pin To Net: Unknown Pin: Pin R3-2
+Add Pin To Net: Unknown Pin: Pin R4-1
+Add Pin To Net: Unknown Pin: Pin R4-2
+Add Pin To Net: Unknown Pin: Pin R5-1
+Add Pin To Net: Unknown Pin: Pin R5-2
+Add Pin To Net: Unknown Pin: Pin R6-1
+Add Pin To Net: Unknown Pin: Pin R6-2
+Add Pin To Net: Unknown Pin: Pin R7-1
+Add Pin To Net: Unknown Pin: Pin R7-2
+Add Pin To Net: Unknown Pin: Pin R8-1
+Add Pin To Net: Unknown Pin: Pin R8-2
+Add Pin To Net: Unknown Pin: Pin R9-1
+Add Pin To Net: Unknown Pin: Pin R9-2
+Add Pin To Net: Unknown Pin: Pin R10-1
+Add Pin To Net: Unknown Pin: Pin R10-2
+Add Class Member: Failed to add class member : Component R1 Resistor
+Add Class Member: Failed to add class member : Component R2 Resistor
+Add Class Member: Failed to add class member : Component R3 Resistor
+Add Class Member: Failed to add class member : Component R4 Resistor
+Add Class Member: Failed to add class member : Component R5 Resistor
+Add Class Member: Failed to add class member : Component R6 Resistor
+Add Class Member: Failed to add class member : Component R7 Resistor
+Add Class Member: Failed to add class member : Component R8 Resistor
+Add Class Member: Failed to add class member : Component R9 Resistor
+Add Class Member: Failed to add class member : Component R10 Resistor

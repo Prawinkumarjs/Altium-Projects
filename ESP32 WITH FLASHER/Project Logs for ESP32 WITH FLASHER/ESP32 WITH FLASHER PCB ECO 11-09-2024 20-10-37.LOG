@@ -1,0 +1,200 @@
+Added Component: Designator=D1(WL-TIRW_D3.9H5.3)
+Add component (AddParameter): Name = "Forward Current"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forward Voltage"; Value = "1.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Reverse Voltage (DC)"; Value = "5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NexarPartId"; Value = "82270983"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Peak Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Non-Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Viewing Angle"; Value = "35°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Added Component: Designator=D2(WL-TIRW_D3.9H5.3)
+Add component (AddParameter): Name = "Forward Current"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forward Voltage"; Value = "1.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Reverse Voltage (DC)"; Value = "5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NexarPartId"; Value = "82270983"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Peak Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Non-Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Viewing Angle"; Value = "35°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Added Component: Designator=D3(WL-TIRW_D3.9H5.3)
+Add component (AddParameter): Name = "Forward Current"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forward Voltage"; Value = "1.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Reverse Voltage (DC)"; Value = "5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NexarPartId"; Value = "82270983"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Peak Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Non-Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Viewing Angle"; Value = "35°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Added Component: Designator=D4(WL-TIRW_D3.9H5.3)
+Add component (AddParameter): Name = "Forward Current"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forward Voltage"; Value = "1.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Reverse Voltage (DC)"; Value = "5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NexarPartId"; Value = "82270983"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Peak Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Non-Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Viewing Angle"; Value = "35°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Added Component: Designator=D5(WL-TIRW_D3.9H5.3)
+Add component (AddParameter): Name = "Forward Current"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forward Voltage"; Value = "1.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Reverse Voltage (DC)"; Value = "5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NexarPartId"; Value = "82270983"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Peak Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Non-Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Viewing Angle"; Value = "35°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Added Component: Designator=D6(WL-TIRW_D3.9H5.3)
+Add component (AddParameter): Name = "Forward Current"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forward Voltage"; Value = "1.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Reverse Voltage (DC)"; Value = "5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NexarPartId"; Value = "82270983"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Peak Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Non-Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Viewing Angle"; Value = "35°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Added Component: Designator=D7(WL-TIRW_D3.9H5.3)
+Add component (AddParameter): Name = "Forward Current"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forward Voltage"; Value = "1.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Reverse Voltage (DC)"; Value = "5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NexarPartId"; Value = "82270983"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Peak Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Non-Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Viewing Angle"; Value = "35°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Added Component: Designator=D8(WL-TIRW_D3.9H5.3)
+Add component (AddParameter): Name = "Forward Current"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forward Voltage"; Value = "1.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Reverse Voltage (DC)"; Value = "5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NexarPartId"; Value = "82270983"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Peak Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Non-Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Viewing Angle"; Value = "35°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Added Component: Designator=D9(WL-TIRW_D3.9H5.3)
+Add component (AddParameter): Name = "Forward Current"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forward Voltage"; Value = "1.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Reverse Voltage (DC)"; Value = "5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NexarPartId"; Value = "82270983"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Peak Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Non-Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Viewing Angle"; Value = "35°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Added Component: Designator=D10(WL-TIRW_D3.9H5.3)
+Add component (AddParameter): Name = "Forward Current"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forward Voltage"; Value = "1.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Reverse Voltage (DC)"; Value = "5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NexarPartId"; Value = "82270983"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Peak Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Non-Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Viewing Angle"; Value = "35°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wavelength"; Value = "850nm"; VariantName = "[No Variations]"
+Added Component: Designator=J1(AMPHENOL_10118193-0001LF)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/10118193-0001LF/Amphenol+FCI/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Amphenol ICC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "10118193-0001LF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/10118193-0001LF/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/10118193-0001LF/Amphenol+FCI/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U1(MODULE_ESP32-WROOM-32)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/ESP32-WROOM-32/Espressif+Systems/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Espressif Systems"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "ESP32-WROOM-32"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "Module Espressif Systems"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/ESP32-WROOM-32/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/ESP32-WROOM-32/Espressif+Systems/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=D1-1
+Added Pin To Net: NetName=GND Pin=D2-1
+Added Pin To Net: NetName=GND Pin=D3-1
+Added Pin To Net: NetName=GND Pin=D4-1
+Added Pin To Net: NetName=GND Pin=D5-1
+Added Pin To Net: NetName=GND Pin=D6-1
+Added Pin To Net: NetName=GND Pin=D7-1
+Added Pin To Net: NetName=GND Pin=D8-1
+Added Pin To Net: NetName=GND Pin=D9-1
+Added Pin To Net: NetName=GND Pin=D10-1
+Added Pin To Net: NetName=GND Pin=J1-5
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=GND Pin=U1-15
+Added Pin To Net: NetName=GND Pin=U1-38
+Added Pin To Net: NetName=GND Pin=U1-39_1
+Added Pin To Net: NetName=GND Pin=U1-39_2
+Added Pin To Net: NetName=GND Pin=U1-39_3
+Added Pin To Net: NetName=GND Pin=U1-39_4
+Added Pin To Net: NetName=GND Pin=U1-39_5
+Added Pin To Net: NetName=GND Pin=U1-39_6
+Added Pin To Net: NetName=GND Pin=U1-39_7
+Added Pin To Net: NetName=GND Pin=U1-39_8
+Added Pin To Net: NetName=GND Pin=U1-39_9
+Added Pin To Net: NetName=GND Pin=U1-39_10
+Added Pin To Net: NetName=GND Pin=U1-39_11
+Added Pin To Net: NetName=GND Pin=U1-39_12
+Added Pin To Net: NetName=GND Pin=U1-39_13
+Added Pin To Net: NetName=GND Pin=U1-39_14
+Added Pin To Net: NetName=GND Pin=U1-39_15
+Added Pin To Net: NetName=GND Pin=U1-39_16
+Added Pin To Net: NetName=GND Pin=U1-39_17
+Added Pin To Net: NetName=GND Pin=U1-39_18
+Added Pin To Net: NetName=GND Pin=U1-39_19
+Added Pin To Net: NetName=GND Pin=U1-39_20
+Added Pin To Net: NetName=GND Pin=U1-39_21
+Added Net: Name=GND
+Added Pin To Net: NetName=NetD1_2 Pin=D1-2
+Added Net: Name=NetD1_2
+Added Pin To Net: NetName=NetD2_2 Pin=D2-2
+Added Net: Name=NetD2_2
+Added Pin To Net: NetName=NetD3_2 Pin=D3-2
+Added Net: Name=NetD3_2
+Added Pin To Net: NetName=NetD4_2 Pin=D4-2
+Added Net: Name=NetD4_2
+Added Pin To Net: NetName=NetD5_2 Pin=D5-2
+Added Net: Name=NetD5_2
+Added Pin To Net: NetName=NetD6_2 Pin=D6-2
+Added Net: Name=NetD6_2
+Added Pin To Net: NetName=NetD7_2 Pin=D7-2
+Added Net: Name=NetD7_2
+Added Pin To Net: NetName=NetD8_2 Pin=D8-2
+Added Net: Name=NetD8_2
+Added Pin To Net: NetName=NetD9_2 Pin=D9-2
+Added Net: Name=NetD9_2
+Added Pin To Net: NetName=NetD10_2 Pin=D10-2
+Added Net: Name=NetD10_2
+Added Pin To Net: NetName=NetR1_1 Pin=U1-24
+Added Net: Name=NetR1_1
+Added Pin To Net: NetName=NetR2_1 Pin=U1-29
+Added Net: Name=NetR2_1
+Added Pin To Net: NetName=NetR3_1 Pin=U1-16
+Added Net: Name=NetR3_1
+Added Pin To Net: NetName=NetR4_1 Pin=U1-23
+Added Net: Name=NetR4_1
+Added Pin To Net: NetName=NetR5_1 Pin=U1-28
+Added Net: Name=NetR5_1
+Added Pin To Net: NetName=NetR6_1 Pin=U1-31
+Added Net: Name=NetR6_1
+Added Pin To Net: NetName=NetR7_1 Pin=U1-36
+Added Net: Name=NetR7_1
+Added Pin To Net: NetName=NetR8_1 Pin=U1-10
+Added Net: Name=NetR8_1
+Added Pin To Net: NetName=NetR9_1 Pin=U1-12
+Added Net: Name=NetR9_1
+Added Pin To Net: NetName=NetR10_1 Pin=U1-9
+Added Net: Name=NetR10_1
+Added Pin To Net: NetName=VCC Pin=J1-1
+Added Pin To Net: NetName=VCC Pin=U1-2
+Added Net: Name=VCC
+Added Class: Name=ESP32 WITH FLASHER

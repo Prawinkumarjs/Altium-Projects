@@ -1,0 +1,624 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD24\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11-09-2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">21:06:31</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc" class="file"><acronym title="C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc">C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">96</td></tr>
+</table>
+</td>
+</table><a name="ID1FGM4XWT2KC1HT4GN0MHBSP1HEHJ0BMZC4XQWPFN5LA1TV1FKKEN"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYIR11VG2BDMRKOQPNJYLASVIDZUOAFBYKCNCXB2EIY42RAWZDSM">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2OJPHN2LI3YNDOIN4KDEL4BEBG1ITTHE0OIBYXHUOPMGPNHI1DQD">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYUXKFD5YVHYAJJCWA2YX1KXG5ITWSSYYMSDQM4H4VAA4TZUBWGUC">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4KNHFENTTIX4LHBWYPTKLZ05UGXIKFWNGVI4NDOYKPD5VQ3FTGJ">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5R1SGXYX5OU1HKTPMQ41HBLEUDPPFJE5BIUMMSIU0H0MPGTSMN5">Width Constraint (Min=10mil) (Max=10mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5O54LYEN0JAAIYHB5DHIRR4HDIY5IBMCQ4DBCQCMLB4XNR22PTVE">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJRFDZTX3EZUSCJQYCWIYLD052HBQCOMCAQ54XVKDNLBMKVFEAMOB">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1ENUCYA2L4H5PJGCYP5Z5WD1RFR1TOJVA5AXGRHPROH10G3MVO5D">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDP3UD2RP10FRJERO5I5PX4K1JRP20QOGQUHHKCOE1MM44SV5PKWJP">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">41</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYR5MXJ3135POF31YXKP1SKV5OIQ24QVULUFG5ZN4CGACQLPTIECE">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">53</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUY20HDF02CLFIYCY2ZJI0GLHNOTYAC5YI5YKMIPMCMW4X33VYI2P">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZ5LQ5GLANGH3KES2WAA1RNDQIP5FOVH1ZTA4VTKQ4UAJJGWHUALC">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDG3FV2PX1GF4NBWL311PBGV3QHGCPD0ABW04Y1IK1ORQ2IQG3OPJ">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">96</td>
+</tr>
+</table><br><a name="IDYIR11VG2BDMRKOQPNJYLASVIDZUOAFBYKCNCXB2EIY42RAWZDSM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3733.234mil|Location2.X=3744.484mil|Location1.Y=1596.266mil|Location2.Y=1607.516mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3733.234mil|Location2.X=3744.484mil|Location1.Y=1596.266mil|Location2.Y=1607.516mil|Absolute=True">Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J1-1(3726.064mil,1575.316mil) on Top Layer And Pad J1-2(3751.654mil,1575.316mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3810.005mil|Location2.X=3821.255mil|Location1.Y=1596.266mil|Location2.Y=1607.516mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3810.005mil|Location2.X=3821.255mil|Location1.Y=1596.266mil|Location2.Y=1607.516mil|Absolute=True">Clearance Constraint: (9.844mil &lt; 10mil) Between Pad J1-4(3802.834mil,1575.316mil) on Top Layer And Pad J1-5(3828.426mil,1575.316mil) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDP3UD2RP10FRJERO5I5PX4K1JRP20QOGQUHHKCOE1MM44SV5PKWJP"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3733.234mil|Location2.X=3744.484mil|Location1.Y=1600.266mil|Location2.Y=1611.516mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3733.234mil|Location2.X=3744.484mil|Location1.Y=1600.266mil|Location2.Y=1611.516mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (1.842mil &lt; 10mil) Between Pad J1-1(3726.064mil,1575.316mil) on Top Layer And Pad J1-2(3751.654mil,1575.316mil) on Top Layer [Top Solder] Mask Sliver [1.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3758.824mil|Location2.X=3770.074mil|Location1.Y=1600.266mil|Location2.Y=1611.516mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3758.824mil|Location2.X=3770.074mil|Location1.Y=1600.266mil|Location2.Y=1611.516mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (1.842mil &lt; 10mil) Between Pad J1-2(3751.654mil,1575.316mil) on Top Layer And Pad J1-3(3777.244mil,1575.316mil) on Top Layer [Top Solder] Mask Sliver [1.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3784.414mil|Location2.X=3795.664mil|Location1.Y=1600.266mil|Location2.Y=1611.516mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3784.414mil|Location2.X=3795.664mil|Location1.Y=1600.266mil|Location2.Y=1611.516mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (1.842mil &lt; 10mil) Between Pad J1-3(3777.244mil,1575.316mil) on Top Layer And Pad J1-4(3802.834mil,1575.316mil) on Top Layer [Top Solder] Mask Sliver [1.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3810.005mil|Location2.X=3821.255mil|Location1.Y=1600.266mil|Location2.Y=1611.516mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3810.005mil|Location2.X=3821.255mil|Location1.Y=1600.266mil|Location2.Y=1611.516mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (1.844mil &lt; 10mil) Between Pad J1-4(3802.834mil,1575.316mil) on Top Layer And Pad J1-5(3828.426mil,1575.316mil) on Top Layer [Top Solder] Mask Sliver [1.844mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2406.895mil|Location2.Y=2418.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2406.895mil|Location2.Y=2418.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-1(3453.602mil,2437.52mil) on Top Layer And Pad U1-2(3453.602mil,2387.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=1956.895mil|Location2.Y=1968.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=1956.895mil|Location2.Y=1968.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-10(3453.602mil,1987.52mil) on Top Layer And Pad U1-11(3453.602mil,1937.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2006.895mil|Location2.Y=2018.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2006.895mil|Location2.Y=2018.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-10(3453.602mil,1987.52mil) on Top Layer And Pad U1-9(3453.602mil,2037.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3400.772mil|Location2.X=3412.022mil|Location1.Y=1958.124mil|Location2.Y=1969.374mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3400.772mil|Location2.X=3412.022mil|Location1.Y=1958.124mil|Location2.Y=1969.374mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (8.701mil &lt; 10mil) Between Pad U1-10(3453.602mil,1987.52mil) on Top Layer And Via (3377mil,1948mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [8.7mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=1906.895mil|Location2.Y=1918.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=1906.895mil|Location2.Y=1918.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-11(3453.602mil,1937.52mil) on Top Layer And Pad U1-12(3453.602mil,1887.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3402.491mil|Location2.X=3413.741mil|Location1.Y=1942.375mil|Location2.Y=1953.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3402.491mil|Location2.X=3413.741mil|Location1.Y=1942.375mil|Location2.Y=1953.625mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.232mil &lt; 10mil) Between Pad U1-11(3453.602mil,1937.52mil) on Top Layer And Via (3377mil,1948mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [4.232mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=1856.895mil|Location2.Y=1868.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=1856.895mil|Location2.Y=1868.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-12(3453.602mil,1887.52mil) on Top Layer And Pad U1-13(3453.602mil,1837.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=1806.895mil|Location2.Y=1818.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=1806.895mil|Location2.Y=1818.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-13(3453.602mil,1837.52mil) on Top Layer And Pad U1-14(3453.602mil,1787.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3582.623mil|Location2.X=3593.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3582.623mil|Location2.X=3593.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-15(3563.248mil,1748.15mil) on Top Layer And Pad U1-16(3613.248mil,1748.15mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3632.623mil|Location2.X=3643.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3632.623mil|Location2.X=3643.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-16(3613.248mil,1748.15mil) on Top Layer And Pad U1-17(3663.248mil,1748.15mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3682.623mil|Location2.X=3693.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3682.623mil|Location2.X=3693.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-17(3663.248mil,1748.15mil) on Top Layer And Pad U1-18(3713.248mil,1748.15mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3732.623mil|Location2.X=3743.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3732.623mil|Location2.X=3743.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-18(3713.248mil,1748.15mil) on Top Layer And Pad U1-19(3763.248mil,1748.15mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3782.623mil|Location2.X=3793.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3782.623mil|Location2.X=3793.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-19(3763.248mil,1748.15mil) on Top Layer And Pad U1-20(3813.248mil,1748.15mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2356.895mil|Location2.Y=2368.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2356.895mil|Location2.Y=2368.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-2(3453.602mil,2387.52mil) on Top Layer And Pad U1-3(3453.602mil,2337.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3832.623mil|Location2.X=3843.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3832.623mil|Location2.X=3843.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-20(3813.248mil,1748.15mil) on Top Layer And Pad U1-21(3863.248mil,1748.15mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3882.623mil|Location2.X=3893.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3882.623mil|Location2.X=3893.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-21(3863.248mil,1748.15mil) on Top Layer And Pad U1-22(3913.248mil,1748.15mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3932.623mil|Location2.X=3943.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3932.623mil|Location2.X=3943.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-22(3913.248mil,1748.15mil) on Top Layer And Pad U1-23(3963.248mil,1748.15mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3982.623mil|Location2.X=3993.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3982.623mil|Location2.X=3993.873mil|Location1.Y=1699.155mil|Location2.Y=1710.405mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-23(3963.248mil,1748.15mil) on Top Layer And Pad U1-24(4013.248mil,1748.15mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=1806.895mil|Location2.Y=1818.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=1806.895mil|Location2.Y=1818.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-25(4122.894mil,1787.52mil) on Top Layer And Pad U1-26(4122.894mil,1837.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=1856.895mil|Location2.Y=1868.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=1856.895mil|Location2.Y=1868.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-26(4122.894mil,1837.52mil) on Top Layer And Pad U1-27(4122.894mil,1887.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=1906.895mil|Location2.Y=1918.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=1906.895mil|Location2.Y=1918.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-27(4122.894mil,1887.52mil) on Top Layer And Pad U1-28(4122.894mil,1937.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=1956.895mil|Location2.Y=1968.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=1956.895mil|Location2.Y=1968.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-28(4122.894mil,1937.52mil) on Top Layer And Pad U1-29(4122.894mil,1987.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2006.895mil|Location2.Y=2018.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2006.895mil|Location2.Y=2018.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-29(4122.894mil,1987.52mil) on Top Layer And Pad U1-30(4122.894mil,2037.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2306.895mil|Location2.Y=2318.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2306.895mil|Location2.Y=2318.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-3(3453.602mil,2337.52mil) on Top Layer And Pad U1-4(3453.602mil,2287.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2056.895mil|Location2.Y=2068.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2056.895mil|Location2.Y=2068.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-30(4122.894mil,2037.52mil) on Top Layer And Pad U1-31(4122.894mil,2087.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2106.895mil|Location2.Y=2118.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2106.895mil|Location2.Y=2118.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-31(4122.894mil,2087.52mil) on Top Layer And Pad U1-32(4122.894mil,2137.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2156.895mil|Location2.Y=2168.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2156.895mil|Location2.Y=2168.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-32(4122.894mil,2137.52mil) on Top Layer And Pad U1-33(4122.894mil,2187.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2206.895mil|Location2.Y=2218.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2206.895mil|Location2.Y=2218.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-33(4122.894mil,2187.52mil) on Top Layer And Pad U1-34(4122.894mil,2237.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2256.895mil|Location2.Y=2268.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2256.895mil|Location2.Y=2268.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-34(4122.894mil,2237.52mil) on Top Layer And Pad U1-35(4122.894mil,2287.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2306.895mil|Location2.Y=2318.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2306.895mil|Location2.Y=2318.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-35(4122.894mil,2287.52mil) on Top Layer And Pad U1-36(4122.894mil,2337.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2356.895mil|Location2.Y=2368.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2356.895mil|Location2.Y=2368.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-36(4122.894mil,2337.52mil) on Top Layer And Pad U1-37(4122.894mil,2387.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2406.895mil|Location2.Y=2418.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4073.899mil|Location2.X=4085.149mil|Location1.Y=2406.895mil|Location2.Y=2418.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-37(4122.894mil,2387.52mil) on Top Layer And Pad U1-38(4122.894mil,2437.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2256.895mil|Location2.Y=2268.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2256.895mil|Location2.Y=2268.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-4(3453.602mil,2287.52mil) on Top Layer And Pad U1-5(3453.602mil,2237.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2206.895mil|Location2.Y=2218.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2206.895mil|Location2.Y=2218.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-5(3453.602mil,2237.52mil) on Top Layer And Pad U1-6(3453.602mil,2187.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2156.895mil|Location2.Y=2168.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2156.895mil|Location2.Y=2168.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-6(3453.602mil,2187.52mil) on Top Layer And Pad U1-7(3453.602mil,2137.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2106.895mil|Location2.Y=2118.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2106.895mil|Location2.Y=2118.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-7(3453.602mil,2137.52mil) on Top Layer And Pad U1-8(3453.602mil,2087.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2056.895mil|Location2.Y=2068.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3404.607mil|Location2.X=3415.857mil|Location1.Y=2056.895mil|Location2.Y=2068.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.567mil &lt; 10mil) Between Pad U1-8(3453.602mil,2087.52mil) on Top Layer And Pad U1-9(3453.602mil,2037.52mil) on Top Layer [Top Solder] Mask Sliver [6.567mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDYR5MXJ3135POF31YXKP1SKV5OIQ24QVULUFG5ZN4CGACQLPTIECE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2160.929mil|Location2.X=2172.179mil|Location1.Y=3340.232mil|Location2.Y=3351.482mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2160.929mil|Location2.X=2172.179mil|Location1.Y=3340.232mil|Location2.Y=3351.482mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (2230mil,3315mil) on Top Overlay And Pad D10-2(2180mil,3315mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2160.929mil|Location2.X=2172.179mil|Location1.Y=3278.518mil|Location2.Y=3289.768mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2160.929mil|Location2.X=2172.179mil|Location1.Y=3278.518mil|Location2.Y=3289.768mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (2230mil,3315mil) on Top Overlay And Pad D10-2(2180mil,3315mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2550.929mil|Location2.X=2562.179mil|Location1.Y=3345.232mil|Location2.Y=3356.482mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2550.929mil|Location2.X=2562.179mil|Location1.Y=3345.232mil|Location2.Y=3356.482mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (2620mil,3320mil) on Top Overlay And Pad D9-2(2570mil,3320mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2550.929mil|Location2.X=2562.179mil|Location1.Y=3283.518mil|Location2.Y=3294.768mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2550.929mil|Location2.X=2562.179mil|Location1.Y=3283.518mil|Location2.Y=3294.768mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (2620mil,3320mil) on Top Overlay And Pad D9-2(2570mil,3320mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2905.929mil|Location2.X=2917.179mil|Location1.Y=3350.232mil|Location2.Y=3361.482mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2905.929mil|Location2.X=2917.179mil|Location1.Y=3350.232mil|Location2.Y=3361.482mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (2975mil,3325mil) on Top Overlay And Pad D8-2(2925mil,3325mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2905.929mil|Location2.X=2917.179mil|Location1.Y=3288.518mil|Location2.Y=3299.768mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2905.929mil|Location2.X=2917.179mil|Location1.Y=3288.518mil|Location2.Y=3299.768mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (2975mil,3325mil) on Top Overlay And Pad D8-2(2925mil,3325mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3270.929mil|Location2.X=3282.179mil|Location1.Y=3298.518mil|Location2.Y=3309.768mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3270.929mil|Location2.X=3282.179mil|Location1.Y=3298.518mil|Location2.Y=3309.768mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (3340mil,3335mil) on Top Overlay And Pad D7-2(3290mil,3335mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3270.929mil|Location2.X=3282.179mil|Location1.Y=3360.232mil|Location2.Y=3371.482mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3270.929mil|Location2.X=3282.179mil|Location1.Y=3360.232mil|Location2.Y=3371.482mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (3340mil,3335mil) on Top Overlay And Pad D7-2(3290mil,3335mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3585.929mil|Location2.X=3597.179mil|Location1.Y=3298.518mil|Location2.Y=3309.768mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3585.929mil|Location2.X=3597.179mil|Location1.Y=3298.518mil|Location2.Y=3309.768mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (3655mil,3335mil) on Top Overlay And Pad D6-2(3605mil,3335mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3585.929mil|Location2.X=3597.179mil|Location1.Y=3360.232mil|Location2.Y=3371.482mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3585.929mil|Location2.X=3597.179mil|Location1.Y=3360.232mil|Location2.Y=3371.482mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (3655mil,3335mil) on Top Overlay And Pad D6-2(3605mil,3335mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3925.929mil|Location2.X=3937.179mil|Location1.Y=3350.232mil|Location2.Y=3361.482mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3925.929mil|Location2.X=3937.179mil|Location1.Y=3350.232mil|Location2.Y=3361.482mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (3995mil,3325mil) on Top Overlay And Pad D5-2(3945mil,3325mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3925.929mil|Location2.X=3937.179mil|Location1.Y=3288.518mil|Location2.Y=3299.768mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3925.929mil|Location2.X=3937.179mil|Location1.Y=3288.518mil|Location2.Y=3299.768mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (3995mil,3325mil) on Top Overlay And Pad D5-2(3945mil,3325mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4300.929mil|Location2.X=4312.179mil|Location1.Y=3360.232mil|Location2.Y=3371.482mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4300.929mil|Location2.X=4312.179mil|Location1.Y=3360.232mil|Location2.Y=3371.482mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (4370mil,3335mil) on Top Overlay And Pad D4-2(4320mil,3335mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4300.929mil|Location2.X=4312.179mil|Location1.Y=3298.518mil|Location2.Y=3309.768mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4300.929mil|Location2.X=4312.179mil|Location1.Y=3298.518mil|Location2.Y=3309.768mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (4370mil,3335mil) on Top Overlay And Pad D4-2(4320mil,3335mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4645.929mil|Location2.X=4657.179mil|Location1.Y=3288.518mil|Location2.Y=3299.768mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4645.929mil|Location2.X=4657.179mil|Location1.Y=3288.518mil|Location2.Y=3299.768mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (4715mil,3325mil) on Top Overlay And Pad D3-2(4665mil,3325mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4645.929mil|Location2.X=4657.179mil|Location1.Y=3350.232mil|Location2.Y=3361.482mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4645.929mil|Location2.X=4657.179mil|Location1.Y=3350.232mil|Location2.Y=3361.482mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (4715mil,3325mil) on Top Overlay And Pad D3-2(4665mil,3325mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4970.929mil|Location2.X=4982.179mil|Location1.Y=3365.232mil|Location2.Y=3376.482mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4970.929mil|Location2.X=4982.179mil|Location1.Y=3365.232mil|Location2.Y=3376.482mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (5040mil,3340mil) on Top Overlay And Pad D2-2(4990mil,3340mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4970.929mil|Location2.X=4982.179mil|Location1.Y=3303.518mil|Location2.Y=3314.768mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4970.929mil|Location2.X=4982.179mil|Location1.Y=3303.518mil|Location2.Y=3314.768mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (5040mil,3340mil) on Top Overlay And Pad D2-2(4990mil,3340mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5325.929mil|Location2.X=5337.179mil|Location1.Y=3375.232mil|Location2.Y=3386.482mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5325.929mil|Location2.X=5337.179mil|Location1.Y=3375.232mil|Location2.Y=3386.482mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (5395mil,3350mil) on Top Overlay And Pad D1-2(5345mil,3350mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5325.929mil|Location2.X=5337.179mil|Location1.Y=3313.518mil|Location2.Y=3324.768mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5325.929mil|Location2.X=5337.179mil|Location1.Y=3313.518mil|Location2.Y=3324.768mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.253mil &lt; 10mil) Between Arc (5395mil,3350mil) on Top Overlay And Pad D1-2(5345mil,3350mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.253mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.895mil|Location2.X=2293.145mil|Location1.Y=3277.244mil|Location2.Y=3288.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.895mil|Location2.X=2293.145mil|Location1.Y=3277.244mil|Location2.Y=3288.494mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D10-1(2280mil,3315mil) on Multi-Layer And Track (2289.074mil,3265.968mil)(2289.074mil,3275.63mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.895mil|Location2.X=2293.145mil|Location1.Y=3341.506mil|Location2.Y=3352.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.895mil|Location2.X=2293.145mil|Location1.Y=3341.506mil|Location2.Y=3352.756mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D10-1(2280mil,3315mil) on Multi-Layer And Track (2289.074mil,3354.37mil)(2289.074mil,3364.032mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2141.112mil|Location2.X=2152.362mil|Location1.Y=3309.49mil|Location2.Y=3320.74mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2141.112mil|Location2.X=2152.362mil|Location1.Y=3309.49mil|Location2.Y=3320.74mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.448mil &lt; 10mil) Between Pad D10-2(2180mil,3315mil) on Multi-Layer And Text "+" (2113.858mil,3295.315mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.447mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5446.895mil|Location2.X=5458.145mil|Location1.Y=3312.244mil|Location2.Y=3323.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5446.895mil|Location2.X=5458.145mil|Location1.Y=3312.244mil|Location2.Y=3323.494mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D1-1(5445mil,3350mil) on Multi-Layer And Track (5454.074mil,3300.968mil)(5454.074mil,3310.63mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5446.895mil|Location2.X=5458.145mil|Location1.Y=3376.506mil|Location2.Y=3387.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5446.895mil|Location2.X=5458.145mil|Location1.Y=3376.506mil|Location2.Y=3387.756mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D1-1(5445mil,3350mil) on Multi-Layer And Track (5454.074mil,3389.37mil)(5454.074mil,3399.032mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5306.112mil|Location2.X=5317.362mil|Location1.Y=3344.49mil|Location2.Y=3355.74mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5306.112mil|Location2.X=5317.362mil|Location1.Y=3344.49mil|Location2.Y=3355.74mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.448mil &lt; 10mil) Between Pad D1-2(5345mil,3350mil) on Multi-Layer And Text "+" (5278.858mil,3330.315mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.447mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5091.895mil|Location2.X=5103.145mil|Location1.Y=3302.244mil|Location2.Y=3313.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5091.895mil|Location2.X=5103.145mil|Location1.Y=3302.244mil|Location2.Y=3313.494mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D2-1(5090mil,3340mil) on Multi-Layer And Track (5099.074mil,3290.968mil)(5099.074mil,3300.63mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5091.895mil|Location2.X=5103.145mil|Location1.Y=3366.506mil|Location2.Y=3377.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5091.895mil|Location2.X=5103.145mil|Location1.Y=3366.506mil|Location2.Y=3377.756mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D2-1(5090mil,3340mil) on Multi-Layer And Track (5099.074mil,3379.37mil)(5099.074mil,3389.032mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4951.112mil|Location2.X=4962.362mil|Location1.Y=3334.49mil|Location2.Y=3345.74mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4951.112mil|Location2.X=4962.362mil|Location1.Y=3334.49mil|Location2.Y=3345.74mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.448mil &lt; 10mil) Between Pad D2-2(4990mil,3340mil) on Multi-Layer And Text "+" (4923.858mil,3320.315mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.447mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4766.895mil|Location2.X=4778.145mil|Location1.Y=3287.244mil|Location2.Y=3298.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4766.895mil|Location2.X=4778.145mil|Location1.Y=3287.244mil|Location2.Y=3298.494mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D3-1(4765mil,3325mil) on Multi-Layer And Track (4774.074mil,3275.968mil)(4774.074mil,3285.63mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4766.895mil|Location2.X=4778.145mil|Location1.Y=3351.506mil|Location2.Y=3362.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4766.895mil|Location2.X=4778.145mil|Location1.Y=3351.506mil|Location2.Y=3362.756mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D3-1(4765mil,3325mil) on Multi-Layer And Track (4774.074mil,3364.37mil)(4774.074mil,3374.032mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4626.112mil|Location2.X=4637.362mil|Location1.Y=3319.49mil|Location2.Y=3330.74mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4626.112mil|Location2.X=4637.362mil|Location1.Y=3319.49mil|Location2.Y=3330.74mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.448mil &lt; 10mil) Between Pad D3-2(4665mil,3325mil) on Multi-Layer And Text "+" (4598.858mil,3305.315mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.447mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4421.895mil|Location2.X=4433.145mil|Location1.Y=3297.244mil|Location2.Y=3308.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4421.895mil|Location2.X=4433.145mil|Location1.Y=3297.244mil|Location2.Y=3308.494mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D4-1(4420mil,3335mil) on Multi-Layer And Track (4429.074mil,3285.968mil)(4429.074mil,3295.63mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4421.895mil|Location2.X=4433.145mil|Location1.Y=3361.506mil|Location2.Y=3372.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4421.895mil|Location2.X=4433.145mil|Location1.Y=3361.506mil|Location2.Y=3372.756mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D4-1(4420mil,3335mil) on Multi-Layer And Track (4429.074mil,3374.37mil)(4429.074mil,3384.032mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4281.112mil|Location2.X=4292.362mil|Location1.Y=3329.49mil|Location2.Y=3340.74mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4281.112mil|Location2.X=4292.362mil|Location1.Y=3329.49mil|Location2.Y=3340.74mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.448mil &lt; 10mil) Between Pad D4-2(4320mil,3335mil) on Multi-Layer And Text "+" (4253.858mil,3315.315mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.447mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4046.895mil|Location2.X=4058.145mil|Location1.Y=3287.244mil|Location2.Y=3298.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4046.895mil|Location2.X=4058.145mil|Location1.Y=3287.244mil|Location2.Y=3298.494mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D5-1(4045mil,3325mil) on Multi-Layer And Track (4054.074mil,3275.968mil)(4054.074mil,3285.63mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4046.895mil|Location2.X=4058.145mil|Location1.Y=3351.506mil|Location2.Y=3362.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4046.895mil|Location2.X=4058.145mil|Location1.Y=3351.506mil|Location2.Y=3362.756mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D5-1(4045mil,3325mil) on Multi-Layer And Track (4054.074mil,3364.37mil)(4054.074mil,3374.032mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3906.112mil|Location2.X=3917.362mil|Location1.Y=3319.49mil|Location2.Y=3330.74mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3906.112mil|Location2.X=3917.362mil|Location1.Y=3319.49mil|Location2.Y=3330.74mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.448mil &lt; 10mil) Between Pad D5-2(3945mil,3325mil) on Multi-Layer And Text "+" (3878.858mil,3305.315mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.447mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3706.895mil|Location2.X=3718.145mil|Location1.Y=3297.244mil|Location2.Y=3308.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3706.895mil|Location2.X=3718.145mil|Location1.Y=3297.244mil|Location2.Y=3308.494mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D6-1(3705mil,3335mil) on Multi-Layer And Track (3714.074mil,3285.968mil)(3714.074mil,3295.63mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3706.895mil|Location2.X=3718.145mil|Location1.Y=3361.506mil|Location2.Y=3372.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3706.895mil|Location2.X=3718.145mil|Location1.Y=3361.506mil|Location2.Y=3372.756mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D6-1(3705mil,3335mil) on Multi-Layer And Track (3714.074mil,3374.37mil)(3714.074mil,3384.032mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3566.112mil|Location2.X=3577.362mil|Location1.Y=3329.49mil|Location2.Y=3340.74mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3566.112mil|Location2.X=3577.362mil|Location1.Y=3329.49mil|Location2.Y=3340.74mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.448mil &lt; 10mil) Between Pad D6-2(3605mil,3335mil) on Multi-Layer And Text "+" (3538.858mil,3315.315mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.447mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3391.895mil|Location2.X=3403.145mil|Location1.Y=3297.244mil|Location2.Y=3308.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3391.895mil|Location2.X=3403.145mil|Location1.Y=3297.244mil|Location2.Y=3308.494mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D7-1(3390mil,3335mil) on Multi-Layer And Track (3399.074mil,3285.968mil)(3399.074mil,3295.63mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3391.895mil|Location2.X=3403.145mil|Location1.Y=3361.506mil|Location2.Y=3372.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3391.895mil|Location2.X=3403.145mil|Location1.Y=3361.506mil|Location2.Y=3372.756mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D7-1(3390mil,3335mil) on Multi-Layer And Track (3399.074mil,3374.37mil)(3399.074mil,3384.032mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3251.112mil|Location2.X=3262.362mil|Location1.Y=3329.49mil|Location2.Y=3340.74mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3251.112mil|Location2.X=3262.362mil|Location1.Y=3329.49mil|Location2.Y=3340.74mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.448mil &lt; 10mil) Between Pad D7-2(3290mil,3335mil) on Multi-Layer And Text "+" (3223.858mil,3315.315mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.447mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3026.895mil|Location2.X=3038.145mil|Location1.Y=3287.244mil|Location2.Y=3298.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3026.895mil|Location2.X=3038.145mil|Location1.Y=3287.244mil|Location2.Y=3298.494mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D8-1(3025mil,3325mil) on Multi-Layer And Track (3034.074mil,3275.968mil)(3034.074mil,3285.63mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3026.895mil|Location2.X=3038.145mil|Location1.Y=3351.506mil|Location2.Y=3362.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3026.895mil|Location2.X=3038.145mil|Location1.Y=3351.506mil|Location2.Y=3362.756mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D8-1(3025mil,3325mil) on Multi-Layer And Track (3034.074mil,3364.37mil)(3034.074mil,3374.032mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2886.112mil|Location2.X=2897.362mil|Location1.Y=3319.49mil|Location2.Y=3330.74mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2886.112mil|Location2.X=2897.362mil|Location1.Y=3319.49mil|Location2.Y=3330.74mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.448mil &lt; 10mil) Between Pad D8-2(2925mil,3325mil) on Multi-Layer And Text "+" (2858.858mil,3305.315mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.447mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2671.895mil|Location2.X=2683.145mil|Location1.Y=3282.244mil|Location2.Y=3293.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2671.895mil|Location2.X=2683.145mil|Location1.Y=3282.244mil|Location2.Y=3293.494mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D9-1(2670mil,3320mil) on Multi-Layer And Track (2679.074mil,3270.968mil)(2679.074mil,3280.63mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2671.895mil|Location2.X=2683.145mil|Location1.Y=3346.506mil|Location2.Y=3357.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2671.895mil|Location2.X=2683.145mil|Location1.Y=3346.506mil|Location2.Y=3357.756mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.933mil &lt; 10mil) Between Pad D9-1(2670mil,3320mil) on Multi-Layer And Track (2679.074mil,3359.37mil)(2679.074mil,3369.032mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.933mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2531.112mil|Location2.X=2542.362mil|Location1.Y=3314.49mil|Location2.Y=3325.74mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2531.112mil|Location2.X=2542.362mil|Location1.Y=3314.49mil|Location2.Y=3325.74mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.448mil &lt; 10mil) Between Pad D9-2(2570mil,3320mil) on Multi-Layer And Text "+" (2503.858mil,3300.315mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.447mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3625.354mil|Location2.X=3636.604mil|Location1.Y=1721.356mil|Location2.Y=1732.606mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3625.354mil|Location2.X=3636.604mil|Location1.Y=1721.356mil|Location2.Y=1732.606mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.029mil &lt; 10mil) Between Pad U1-16(3613.248mil,1748.15mil) on Top Layer And Text "J1" (3616mil,1667mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.029mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3652.154mil|Location2.X=3659.82mil|Location1.Y=1723.147mil|Location2.Y=1730.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3652.154mil|Location2.X=3659.82mil|Location1.Y=1723.147mil|Location2.Y=1730.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad U1-17(3663.248mil,1748.15mil) on Top Layer And Text "J1" (3616mil,1667mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3687.629mil|Location2.X=3698.879mil|Location1.Y=1703.155mil|Location2.Y=1714.405mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\ESP32 WITH FLASHER\ESP32 WITH FLASHER.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3687.629mil|Location2.X=3698.879mil|Location1.Y=1703.155mil|Location2.Y=1714.405mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.554mil &lt; 10mil) Between Pad U1-18(3713.248mil,1748.15mil) on Top Layer And Text "J1" (3616mil,1667mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.554mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
