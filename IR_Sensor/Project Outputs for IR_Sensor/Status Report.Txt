@@ -1,0 +1,16 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 22:39:04 On 12-09-2024
+
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [IR_Sensor.PcbDoc]
+   Generated File[IR_Sensor.TXT]
+   Generated File[IR_Sensor.LDP]
+   Generated File[IR_Sensor.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 22:39:04 On 12-09-2024

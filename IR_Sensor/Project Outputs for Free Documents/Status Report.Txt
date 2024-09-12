@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 22:38:10 On 12-09-2024
+
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of PCB Document [IR_Sensor.PcbDoc]
+   Generated File[Pick Place for IR_Sensor.txt]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 22:38:11 On 12-09-2024

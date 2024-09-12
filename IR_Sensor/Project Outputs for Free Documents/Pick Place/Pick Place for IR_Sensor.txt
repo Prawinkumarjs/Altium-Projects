@@ -1,0 +1,22 @@
+Altium Designer Pick and Place Locations
+C:\Users\Public\Documents\Altium\IR_Sensor\Project Outputs for Free Documents\Pick Place\Pick Place for IR_Sensor.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       12-09-24
+Time:       22:38
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+Designator Comment            Layer    Footprint               Center-X(mil) Center-Y(mil) Rotation Description                                                                                              
+R4         3386P-1-104LF      TopLayer FP-3386P-MFG            1450.000      440.590       180      "TRIMMER 100K OHM 0.5W PC PIN TOP"                                                                       
+R3         MRS25000C1002FCT00 TopLayer FP-MRS25-MFG            2035.000      520.000       0        "MRS25000C1002FCT00 Resistor, 10 kOhm, ± 1%, 600 mW, Axial Leaded, Metal Film (Thin Film), Professional" 
+R2         MRS25000C1002FCT00 TopLayer FP-MRS25-MFG            2055.000      245.000       0        "MRS25000C1002FCT00 Resistor, 10 kOhm, ± 1%, 600 mW, Axial Leaded, Metal Film (Thin Film), Professional" 
+R1         MRS25000C1002FCT00 TopLayer FP-MRS25-MFG            2030.000      815.000       0        "MRS25000C1002FCT00 Resistor, 10 kOhm, ± 1%, 600 mW, Axial Leaded, Metal Film (Thin Film), Professional" 
+P1         Header             TopLayer 679303124022            339.646       625.000       90       ""                                                                                                       
+D3         151051BS04000      TopLayer WL-TMRC_D5.9H8.7        880.006       845.006       0        ""                                                                                                       
+D2         151051BS04000      TopLayer WL-TMRC_D5.9H8.7        2594.994      735.006       90       ""                                                                                                       
+D1         151051BS04000      TopLayer WL-TMRC_D5.9H8.7        2599.994      295.006       90       ""                                                                                                       
+*          LM358APE4          TopLayer DIP794W45P254L959H508Q8 875.000       395.000       0        "Operational Amplifier, 2 Func, 5000uV Offset-Max, BIPolar, PDIP8"                                       
