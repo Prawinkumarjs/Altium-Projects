@@ -1,0 +1,31 @@
+Altium Designer Pick and Place Locations
+C:\Users\Public\Documents\Altium\Relay_module\Project Outputs for Free Documents\Pick Place\Pick Place for Relay_module.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       13-09-24
+Time:       18:05
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+Designator Comment            Layer    Footprint            Center-X(mil) Center-Y(mil) Rotation Description                                                                                                 
+R4         MRS25000C1000FRP00 TopLayer FP-MRS25-MFG         3315.000      3280.000      180      "MRS25000C1000FRP00 Resistor, 100 Ohm, ± 1%, 600 mW, Axial Leaded, Metal Film (Thin Film), Professional"    
+R3         MRS25000C1000FRP00 TopLayer FP-MRS25-MFG         3245.000      4430.000      0        "MRS25000C1000FRP00 Resistor, 100 Ohm, ± 1%, 600 mW, Axial Leaded, Metal Film (Thin Film), Professional"    
+R2         MRS25000C1000FRP00 TopLayer FP-MRS25-MFG         3305.000      3505.000      180      "MRS25000C1000FRP00 Resistor, 100 Ohm, ± 1%, 600 mW, Axial Leaded, Metal Film (Thin Film), Professional"    
+R1         MRS25000C1000FRP00 TopLayer FP-MRS25-MFG         3215.000      4710.000      0        "MRS25000C1000FRP00 Resistor, 100 Ohm, ± 1%, 600 mW, Axial Leaded, Metal Film (Thin Film), Professional"    
+Q2         BCW31*             TopLayer SOT23-BEC            2890.000      3820.000      0        "Bipolar (BJT) Transistor NPN General Purpose Amplifier Surface Mount"                                      
+Q1         BCW31*             TopLayer SOT23-BEC            2855.000      4600.000      0        "Bipolar (BJT) Transistor NPN General Purpose Amplifier Surface Mount"                                      
+K2         SRD-05VDC-SL-C     TopLayer RELAY_SRD-05VDC-SL-C 2069.370      3575.000      180      "5V Trigger Relay Module For Arduino And Raspberry Pi 5V Trigger Relay Module For Arduino And Raspberry Pi" 
+K1         SRD-05VDC-SL-C     TopLayer RELAY_SRD-05VDC-SL-C 2079.370      4425.000      180      "5V Trigger Relay Module For Arduino And Raspberry Pi 5V Trigger Relay Module For Arduino And Raspberry Pi" 
+J4         TB006-508-03BE     TopLayer CUI_TB006-508-03BE   1280.000      3555.000      90       "2~24 Poles, Screw Type, Horizontal, 5.08 Pitch, 26~14 (AWG), Terminal Block Connector"                     
+J3         TB006-508-03BE     TopLayer CUI_TB006-508-03BE   1275.000      4415.000      90       "2~24 Poles, Screw Type, Horizontal, 5.08 Pitch, 26~14 (AWG), Terminal Block Connector"                     
+J2         22-05-3041         TopLayer FP-22-05-3041-MFG    3626.556      4380.000      90       "CONN HEADER R/A 4POS 2.54MM"                                                                               
+J1         22-05-3031         TopLayer FP-22-05-3031-MFG    3693.898      3705.000      90       "CONN HEADER R/A 3POS 2.54MM"                                                                               
+IC         LTV-817            TopLayer DIP-4                3250.591      4114.803      270      "Optoisolator Transistor Output 5000Vrms 1 Channel 4-SMD"                                                   
+IC1        LTV-817            TopLayer DIP-4                3250.591      3779.803      270      "Optoisolator Transistor Output 5000Vrms 1 Channel 4-SMD"                                                   
+D          LTST-C193TBKT-5A   TopLayer 0603                 2865.000      4405.000      90       "Blue 470nm LED Indication - Discrete 2.8V 0603 _1608 Metric_"                                              
+D3         1N4003-T           TopLayer DIOD-DO-41-P-2_V     2660.000      3625.000      270      "1.0 A Rectifier, 15 pF, 200 V, -65 to 150 degC, 2-Pin DO-41 Plastic, RoHS, Tape and Reel"                  
+D2         1N4003-T           TopLayer DIOD-DO-41-P-2_V     2645.000      4475.000      270      "1.0 A Rectifier, 15 pF, 200 V, -65 to 150 degC, 2-Pin DO-41 Plastic, RoHS, Tape and Reel"                  
+D1         LTST-C193TBKT-5A   TopLayer 0603                 2885.000      3525.000      90       "Blue 470nm LED Indication - Discrete 2.8V 0603 _1608 Metric_"                                              

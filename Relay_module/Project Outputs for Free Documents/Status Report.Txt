@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 18:05:53 On 13-09-2024
+
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of PCB Document [Relay_module.PcbDoc]
+   Generated File[Pick Place for Relay_module.txt]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 18:05:54 On 13-09-2024
