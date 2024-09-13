@@ -69,4 +69,4 @@ This project focuses on designing an Infrared (IR) sensor using **Altium Designe
 - View the project on Altium 365: [IR Sensor Project](https://prawin-kumar.365.altium.com/designs/1F216A43-F43D-4A52-BA83-09DA4D9E49DF#design)
 
 ## License
-This project is open-source under [Your License]. Feel free to modify and enhance the design.
+This project is open-source under [MIT License](https://opensource.org/license/mit). Feel free to modify and enhance the design.
