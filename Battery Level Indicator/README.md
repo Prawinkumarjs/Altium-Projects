@@ -103,6 +103,8 @@ The schematic includes:
 
 Contributions are welcome! If you have any ideas or improvements, feel free to submit a pull request or open an issue.
 
+## ALTIUM 365 LIVE : [Battery Level Indicator](https://prawin-kumar.365.altium.com/designs/BD4A7B1B-5275-4CA0-86D5-838D7403F101#design)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
