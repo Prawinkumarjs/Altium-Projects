@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 22:24:48 On 17-09-2024
+
+Output: Generates pick and place files
+Type  : Pick Place
+From  : PCB Document [Battery Level Indicator.PcbDoc]
+   Generated File[Pick Place for Battery Level Indicator.txt]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 22:24:49 On 17-09-2024

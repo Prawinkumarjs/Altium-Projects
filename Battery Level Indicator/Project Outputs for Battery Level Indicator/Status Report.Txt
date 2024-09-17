@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 22:29:45 On 17-09-2024
+
+Output: Bill of Materials
+Type  : BOM
+From  : Project [Battery Level Indicator.PrjPcb]
+   Generated File[Bill of Materials-Battery Level Indicator.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 22:29:47 On 17-09-2024
