@@ -9,6 +9,7 @@ Welcome to the **Altium Projects** repository! This repository contains various 
 - **[Projects](#projects)**
 - **[Project Details](#project-details)**
 - **[Getting Started](#getting-started)**
+- **[Acknowledgments](Acknowledgments)**
 - **[Contributing](#contributing)**
 - **[License](#license)**
 
