@@ -57,11 +57,18 @@ The PCB was designed using **Altium Designer** with the following specifications
 ### PCB Layouts:
 
 - **[PCB Layout - Top](https://github.com/Prawinkumarjs/Altium-Projects/blob/main/Battery%20Level%20Indicator/PCB%20Prints-1.png)**
+  ![PCB Layout - Top](https://github.com/Prawinkumarjs/Altium-Projects/blob/main/Battery%20Level%20Indicator/PCB%20Prints-1.png)
 - **[PCB Layout - Bottom](https://github.com/Prawinkumarjs/Altium-Projects/blob/main/Battery%20Level%20Indicator/PCB%20Prints-2.png)**
+
+  ![PCB Layout - Bottom](https://github.com/Prawinkumarjs/Altium-Projects/blob/main/Battery%20Level%20Indicator/PCB%20Prints-2.png)
+
+
 
 ### 3D Model:
 
 - **[3D View of PCB](https://github.com/Prawinkumarjs/Altium-Projects/blob/main/Battery%20Level%20Indicator/PCB%203D%20Print.png)**
+
+  ![3D View of PCB](https://github.com/Prawinkumarjs/Altium-Projects/blob/main/Battery%20Level%20Indicator/PCB%203D%20Print.png)
 
 ## Schematic Design
 
@@ -75,6 +82,9 @@ The schematic includes:
 ### Schematic:
 
 - **[View the Schematic](https://github.com/Prawinkumarjs/Altium-Projects/blob/main/Battery%20Level%20Indicator/Schematic%20Prints.png)**
+ 
+ ![View the Schematic](https://github.com/Prawinkumarjs/Altium-Projects/blob/main/Battery%20Level%20Indicator/Schematic%20Prints.png)
+
 
 ## Simulation and Testing
 
